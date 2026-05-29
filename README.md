@@ -1,5 +1,8 @@
 # Banana-Shooter-Chat-Filter-Plugin
 
+## Disclaimer
+This Plugin contains offensive terms for technical filtering.
+
 ## Plugin Description
 The plugin deletes all inappropriate messages (racist, offensive, and toxic).
 
