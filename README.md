@@ -10,5 +10,7 @@ The plugin deletes all inappropriate messages (racist, offensive, and toxic).
 
 There is indeed a standard in-game filter, but it does not filter everything.
 
+If you want to ban your own words you can add them to the blacklist.txt.
+
 ## Installation
 You put the .lua file in the AutoRun folder and the Blacklist.txt in the main folder where the start file for the server is.
