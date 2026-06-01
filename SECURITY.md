@@ -12,4 +12,4 @@ currently being supported with security updates.
 
 ## Reporting a Vulnerability
 
-If you find a vulnerability, please create a bug report
+If you find a vulnerability, please create a [Private vulnerability report](https://github.com/Bacnof/Banana-Shooter-Chat-Filter-Plugin/security/advisories?state=Triage).
