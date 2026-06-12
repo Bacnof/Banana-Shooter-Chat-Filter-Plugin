@@ -2,12 +2,12 @@
 
 ## Supported Versions
 
-All the versions of this project are
-currently being supported with security updates.
+I will only do security updates for the newest version because the different versions are just from the plugin and not for the game, since the game doesn't get any updates anymore.
 
 | Version | Supported          |
 | ------- | ------------------ |
-| 1.0.0   | :white_check_mark: |
+| 1.0.0   | :x:                |
+| 2.0.0   | :white_check_mark: |
 
 
 ## Reporting a Vulnerability
