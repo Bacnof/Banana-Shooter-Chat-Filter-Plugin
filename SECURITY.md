@@ -7,8 +7,8 @@ I will only do security updates for the newest version because the different ver
 | Version | Supported          |
 | ------- | ------------------ |
 | 1.0.0   | :x:                |
-| 2.0.0   | :white_check_mark: |
-
+| 2.0.0   | :x:                |
+| 2.0.1   | :white_check_mark: |
 
 ## Reporting a Vulnerability
 
