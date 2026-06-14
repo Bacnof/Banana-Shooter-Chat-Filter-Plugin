@@ -24,82 +24,47 @@ local config2 = readConfig("./Servers/MyServer/Lua/Configs/Chat-Filter-Plugin-Co
 local config = config1 or config2
 
 
-if config["debug"] == "true" then
-    print("Chat-Filter-Plugin: debug is enabled")
-    if config["enabled"] == "true" then
+if config["enabled"] == "true" then
+    if config["debug"] == "true" then
+        print("Chat-Filter-Plugin: debug is enabled")
         print("Chat-Filter-Plugin: Plugin is enabled")
-        hook:Add("PlayerSay","Test",function(player,text)
-
-            local function loadWordsFromFile(filename)
-                local words = {}
-                for line in io.lines(filename) do
-                    words[line:lower()] = true
-                end
-                return words
-            end
-
-
-            local function replaceWords(inputString, wordList)
-                local output = inputString:gsub("%w+", function(word)
-                    if wordList[word:lower()] then
-                        return "banana"
-                    else
-                        return word
-                    end
-                end)
-                return output
-            end
-
-
-            local blacklist = loadWordsFromFile("Blacklist.txt")
-            local text = text
-
-            local result = replaceWords(text, blacklist)
-
-            return result
-
-        end)
-    else
-        if config["enabled"] == "false" then
-        print("Chat-Filter-Plugin: Plugin is deactivated")
-        else
-        print("Chat-Filter-Plugin: Config Error")
-        end
     end
+    hook:Add("PlayerSay","Test",function(player,text)
+
+        local function loadWordsFromFile(filename)
+            local words = {}
+            for line in io.lines(filename) do
+                words[line:lower()] = true
+            end
+            return words
+        end
+
+
+        local function replaceWords(inputString, wordList)
+               local output = inputString:gsub("%w+", function(word)
+                if wordList[word:lower()] then
+                    return "banana"
+                else
+                    return word
+                end
+             end)
+            return output
+        end
+
+
+        local blacklist = loadWordsFromFile("Blacklist.txt")
+        local text = text
+
+        local result = replaceWords(text, blacklist)
+
+        return result
+
+    end) 
 else
-    if config["debug"] == "false" then
-        if config["enabled"] == "true" then
-            hook:Add("PlayerSay","Test",function(player,text)
-
-                local function loadWordsFromFile(filename)
-                    local words = {}
-                    for line in io.lines(filename) do
-                        words[line:lower()] = true
-                    end
-                    return words
-                end
-
-
-                local function replaceWords(inputString, wordList)
-                    local output = inputString:gsub("%w+", function(word)
-                        if wordList[word:lower()] then
-                            return "banana"
-                        else
-                            return word
-                        end
-                    end)
-                    return output
-                end
-
-
-                local blacklist = loadWordsFromFile("Blacklist.txt")
-                local text = text
-
-                local result = replaceWords(text, blacklist)
-
-                return result
-
-            end)            
+    if config["enabled"] == "false" then
+        if config["debug"] == "true" then
+            print("Chat-Filter-Plugin: debug is enabled")
+            print("Chat-Filter-Plugin: Plugin is deactivated")
         end
     end
 end
