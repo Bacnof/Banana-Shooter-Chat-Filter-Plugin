@@ -21,10 +21,11 @@ end
 
 local config = readConfig("./Configs/Chat-Filter-Plugin-Config.txt")
 
-
+if config["debug"] == "true" then
+    print("Chat-Filter-Plugin: debug is enabled")
+end
 if config["enabled"] == "true" then
     if config["debug"] == "true" then
-        print("Chat-Filter-Plugin: debug is enabled")
         print("Chat-Filter-Plugin: Plugin is enabled")
     end
     hook:Add("PlayerSay","Test",function(player,text)
