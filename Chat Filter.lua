@@ -43,6 +43,9 @@ if config["enabled"] == "true" then
                local output = inputString:gsub("%w+", function(word)
                 if wordList[word:lower()] then
                     return "banana"
+                    if config["log"] == "true" then
+                        print("Chat-Filter-Plugin: A Player triggered the Chatfilter")
+                    end
                 else
                     return word
                 end
