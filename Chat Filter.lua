@@ -23,6 +23,9 @@ local config = readConfig("./Configs/Chat-Filter-Plugin-Config.txt")
 
 if config["debug"] == "true" then
     print("Chat-Filter-Plugin: debug is enabled")
+    if config["log"] == "true" then
+        print("Chat-Filter-Plugin: Logs are enabled")
+    end    
 end
 if config["enabled"] == "true" then
     if config["debug"] == "true" then
@@ -40,7 +43,7 @@ if config["enabled"] == "true" then
 
 
         local function replaceWords(inputString, wordList)
-               local output = inputString:gsub("%w+", function(word)
+            local output = inputString:gsub("%w+", function(word)
                 if wordList[word:lower()] then
                     if config["log"] == "true" then
                         print("Chat-Filter-Plugin: A Player triggered the Chatfilter")
@@ -49,7 +52,7 @@ if config["enabled"] == "true" then
                 else
                     return word
                 end
-             end)
+            end)
             return output
         end
 
