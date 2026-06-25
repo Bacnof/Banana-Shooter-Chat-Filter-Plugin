@@ -42,10 +42,10 @@ if config["enabled"] == "true" then
         local function replaceWords(inputString, wordList)
                local output = inputString:gsub("%w+", function(word)
                 if wordList[word:lower()] then
-                    return "banana"
                     if config["log"] == "true" then
                         print("Chat-Filter-Plugin: A Player triggered the Chatfilter")
                     end
+                    return "banana"
                 else
                     return word
                 end
@@ -65,7 +65,6 @@ if config["enabled"] == "true" then
 else
     if config["enabled"] == "false" then
         if config["debug"] == "true" then
-            print("Chat-Filter-Plugin: debug is enabled")
             print("Chat-Filter-Plugin: Plugin is deactivated")
         end
     end
