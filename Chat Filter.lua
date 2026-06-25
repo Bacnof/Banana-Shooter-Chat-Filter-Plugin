@@ -28,7 +28,7 @@ if config["enabled"] == "true" then
     if config["debug"] == "true" then
         print("Chat-Filter-Plugin: Plugin is enabled")
     end
-    hook:Add("PlayerSay","Test",function(player,text)
+    hook:Add("PlayerSay","Chatfilter",function(player,text)
 
         local function loadWordsFromFile(filename)
             local words = {}
